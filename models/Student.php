@@ -27,10 +27,10 @@ class Student
     // Create student
     public function create()
     {
-        $query = `INSERT INTO {$this->table_name}
-                  SET name=:name, gender=:gender, address=:address,
-                  phone=:phone, email=:email, batch_id=:batch_id,
-                  division_id=:division_id, created_at=:created_at`;
+        $query = "INSERT INTO {$this->table_name}
+                  SET name=:name, gender=:gender, address=:address, phone=:phone,
+                      email=:email, batch_id=:batch_id, division_id=:division_id,
+                      created_at=:created_at";
 
         $stmt = $this->conn->prepare($query);
 
@@ -64,15 +64,15 @@ class Student
 
     // Read all students with batch and division information
     public function read()
-{
-        $query = `SELECT s.id, s.name, s.gender, s.address, s.phone, s.email,
+    {
+        $query = "SELECT s.id, s.name, s.gender, s.address, s.phone, s.email,
                          s.batch_id, b.name as batch_name,
                          s.division_id, d.name as division_name,
                          s.created_at
                   FROM {$this->table_name} s
                   LEFT JOIN batches b ON s.batch_id = b.id
                   LEFT JOIN divisions d on s.division_id = d.id
-                  ORDER BY s.name ASC`;
+                  ORDER BY s.name ASC";
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
@@ -82,16 +82,16 @@ class Student
 
     // Read single student
     public function readOne()
-{
-        $query = `SELECT s.id, s.name, s.gender, s.address, s.phone, s.email,
+    {
+        $query = "SELECT s.id, s.name, s.gender, s.address, s.phone, s.email,
                          s.batch_id, b.name as batch_name,
                          s.division_id, d.name as division_name,
                          s.created_at
                   FROM {$this->table_name} s
                   LEFT JOIN batches b ON s.batch_id = b.id
                   LEFT JOIN divisions d on s.division_id = d.id
-                  WHERE id = ?
-                  LIMIT 0,1`;
+                  WHERE s.id = ?
+                  LIMIT 0,1";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->id);
@@ -118,7 +118,7 @@ class Student
 
     // Update student
     public function update()
-{
+    {
         $query = "UPDATE {$this->table_name}
                   SET name=:name, gender=:gender, address=:address, phone=:phone,
                       email=:email, batch_id=:batch_id, division_id=:division_id
@@ -155,7 +155,7 @@ class Student
 
     // Delete student
     public function delete()
-{
+    {
         $query = "DELETE FROM {$this->table_name} WHERE id = ?";
         $stmt  = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->id);

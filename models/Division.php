@@ -29,7 +29,7 @@ class Division
         // Bind values
         $stmt->bindParam(':name', $this->name);
         $stmt->bindParam(':description', $this->description);
-        $stmt->created_at(':created_at', $this->created_at);
+        $stmt->bindParam(':created_at', $this->created_at);
 
         // Execute query
         if ($stmt->execute()) {

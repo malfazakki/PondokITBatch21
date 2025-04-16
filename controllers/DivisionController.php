@@ -30,7 +30,7 @@ class DivisionController
             array_push($divisions, $division_item);
         }
 
-        include_once '../views/division/index.php';
+        include_once '../views/divisions/index.php';
     }
 
     public function create()
