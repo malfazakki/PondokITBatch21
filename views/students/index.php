@@ -12,7 +12,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Phone</th>
@@ -28,9 +28,9 @@
                 <td colspan="8" class="text-center">No students found</td>
             </tr>
         <?php else: ?>
-<?php foreach ($students as $student): ?>
+<?php foreach ($students as $i => $student): ?>
                 <tr>
-                    <td><?php echo $student['id']; ?></td>
+                    <td><?php echo $i + 1; ?></td>
                     <td><?php echo $student['name']; ?></td>
                     <td><?php echo $student['gender']; ?></td>
                     <td><?php echo $student['phone']; ?></td>

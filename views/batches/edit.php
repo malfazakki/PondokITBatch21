@@ -9,7 +9,7 @@
     <div class="alert alert-danger"><?php echo $error; ?></div>
 <?php endif; ?>
 
-<form action="batch.php?action=edit&id=<?php echo $this->batch->id; ?>" method="post">
+<form action="batch.php?action=edit&id=<?php echo $this->batch->id; ?>" method="post" class="mb-4">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" value="<?php echo $this->batch->name; ?>" required>

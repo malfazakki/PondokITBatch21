@@ -12,7 +12,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Year</th>
             <th>Description</th>
@@ -26,9 +26,9 @@
                 <td colspan="6" class="text-center">No batches found</td>
             </tr>
         <?php else: ?>
-<?php foreach ($batches as $batch): ?>
+<?php foreach ($batches as $i => $batch): ?>
                 <tr>
-                    <td><?php echo $batch['id']; ?></td>
+                    <td><?php echo $i + 1; ?></td>
                     <td><?php echo $batch['name']; ?></td>
                     <td><?php echo $batch['year']; ?></td>
                     <td><?php echo $batch['description']; ?></td>

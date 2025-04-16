@@ -12,7 +12,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Description</th>
             <th>Created At</th>
@@ -25,9 +25,9 @@
                 <td colspan="5" class="text-center">No divisions found</td>
             </tr>
         <?php else: ?>
-<?php foreach ($divisions as $division): ?>
+<?php foreach ($divisions as $i => $division): ?>
                 <tr>
-                    <td><?php echo $division['id']; ?></td>
+                    <td><?php echo $i + 1; ?></td>
                     <td><?php echo $division['name']; ?></td>
                     <td><?php echo $division['description']; ?></td>
                     <td><?php echo $division['created_at']; ?></td>
