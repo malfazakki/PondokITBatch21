@@ -26,7 +26,7 @@ class SubjectFactory extends Factory
             'TRK' => 'Tarikh',
         ];
 
-        $code = $this->faker->randomElement(array_keys($subjects));
+        $code = $this->faker->unique()->randomElement(array_keys($subjects));
 
         return [
             'code' => $code,

@@ -17,7 +17,7 @@ class ClassesFactory extends Factory
     {
         $levels = ['ula', 'wustha', 'ulya'];
         $level  = $this->faker->randomElement($levels);
-        $class  = $this->faker->unique()->numberBetween(1, 3);
+        $class  = $this->faker->numberBetween(1, 3);
 
         return [
             'name'  => ucfirst($level) . ' ' . $class,
